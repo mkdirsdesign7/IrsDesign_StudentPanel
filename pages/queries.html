@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Queries - Premium</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- font-awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+
+    <!-- link custom css -->
+    <link rel="stylesheet" href="./../assets/css/queries.css">
+    <link rel="stylesheet" href="./../assets/css/style.css">
+</head>
+
+<body>
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar-btn d-md-none" onclick="closeSidebar()">
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="sidebar-header">
+            <div class="logo-box"><img src="./../assets/img/logo.png" alt="logo" width="60px" height="60px"></div>
+        </div>
+
+        <button class="toggle-btn" onclick="toggleSidebar()">
+            <i class="bi bi-chevron-left" id="toggleIcon"></i>
+        </button>
+
+        <nav class="sidebar-nav">
+            <a href="./../dashboard.html" class="sidebar-link"><i
+                    class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+            <a href="./my-Profile.html" class="sidebar-link "><i class="bi bi-people"></i><span>My
+                    Profile</span></a>
+            <a href="./../pages/courses/allCourses.html" class="sidebar-link"><i
+                    class="fa-regular fa-chart-bar"></i><span>All Courses</span></a>
+            <a href="./../pages/courses/myCourses.html" class="sidebar-link"><i class="bi bi-book"></i><span>
+                    MyCourses</span></a>
+            <a href="./../pages/courses/coursesMaterial.html" class="sidebar-link"><i class="bi bi-book"></i><span>
+                    Course Materials</span></a>
+            <a href="./batches.html" class="sidebar-link"><i class="bi bi-layers"></i><span>Batches</span></a>
+            <a href="./payment.html" class="sidebar-link "><i class="bi bi-credit-card"></i><span>Payments</span></a>
+            <a href="./queries.html" class="sidebar-link active"><i
+                    class="bi bi-chat-left-dots"></i><span>Enquiries</span></a>
+            <a href="./certificate.html" class="sidebar-link"><i
+                    class="bi bi-patch-check"></i><span>Certificates</span></a>
+            <a href="./settings.html" class="sidebar-link"><i
+                    class="bi bi-gear"></i><span>Settings</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a class="sidebar-link"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <!-- NAVBAR -->
+    <header class="navbar-custom d-flex align-items-center justify-content-between">
+
+        <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-light d-md-none bg-warning text-white fs-6" onclick="toggleSidebar()">
+                <i class="bi bi-list" id="toggleIcon"></i>
+            </button>
+            <h5 class="mb-0 fw-semibold">Dashboard</h5>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+
+            <!--==================== Bell Icon ==================-->
+            <div class="dropdown text-end">
+                <div class="notification-bell" data-bs-toggle="dropdown">
+                    <i class="bi bi-bell fs-4 text-dark"></i>
+                    <span class="notify-dot"></span>
+                </div>
+
+                <!-- Dropdown notification -->
+                <div class="dropdown-menu text-dark dropdown-menu-end dropdown-menu-notify">
+
+                    <div class="notify-header">
+                        Notifications
+                    </div>
+
+                    <div style="max-height: 280px; overflow-y: auto;">
+                        <div class="notify-item">
+                            <div class="notify-avatar">RK</div>
+                            <div>
+                                <div><strong>Rahul Kumar</strong> enrolled in Full Stack</div>
+                                <div class="notify-time">2 min ago</div>
+                            </div>
+                        </div>
+
+                        <div class="notify-item">
+                            <div class="notify-avatar">PS</div>
+                            <div>
+                                <div><strong>Priya Sharma</strong> made a payment</div>
+                                <div class="notify-time">1 hour ago</div>
+                            </div>
+                        </div>
+
+                        <div class="notify-item">
+                            <div class="notify-avatar">AS</div>
+                            <div>
+                                <div><strong>Amit Singh</strong> sent a message</div>
+                                <div class="notify-time">Yesterday</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-light d-flex align-items-center gap-2" data-bs-toggle="dropdown">
+                    <div class="avatar">SM</div>
+                    <span class="d-none d-md-inline">Sumon</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a href="./settings/settings.html" class="dropdown-item">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item text-danger">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!--================QUERIES MAINCONTENT ==================-->
+
+    <main class="main-content">
+        <div class="wrap">
+
+            <!--  Titles -->
+            <div class="title-wrap">
+                <h4 class="page-title">My Queries</h4>
+                <p class="page-sub">Track your submitted queries and responses</p>
+            </div>
+
+            <!--  Tools bar -->
+            <div class="tool-bar">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search by title..." />
+                </div>
+
+                <div class="row g-2 align-items-center justify-content-between mx-sm-auto">
+
+                    <!-- Select -->
+                    <div class="col-12 col-sm-auto mx-sm-auto">
+                        <div class="filter-select w-100">
+                            <select class="form-select w-100 text-white">
+                                <option>All Status</option>
+                                <option>Open</option>
+                                <option>Resolved</option>
+                                <option>Pending</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="col-12 col-sm-auto mx-sm-auto">
+                        <button class="btn btn-new w-100" data-bs-toggle="modal" data-bs-target="#queryModal">
+                            <i class="bi bi-plus-circle-fill"></i> New Query
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!--  Main area -->
+            <div class="main-card">
+
+                <!--  Empty State -->
+                <div class="empty-card">
+                    <div class="empty-icon">
+                        <i class="bi bi-chat-square-text-fill"></i>
+                    </div>
+
+                    <h5 class="empty-title">No queries submitted yet</h5>
+                    <p class="empty-sub">
+                        Start by submitting your first query to get help from faculty members
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+
+    <!--=================ADD QUERY MODAL ==================-->
+
+    <!-- ✅ Premium Query Modal -->
+    <div class="modal fade query-modal" id="queryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width:520px;">
+            <div class="modal-content">
+
+                <!-- Header -->
+                <div class="qm-head">
+                    <div class="qm-icon">
+                        <i class="bi bi-play-fill"></i>
+                    </div>
+                    <div>
+                        <h5 class="qm-title">Submit New Query</h5>
+                        <p class="qm-sub">Post your question and get help from faculty members</p>
+                    </div>
+                </div>
+
+                <!-- Body -->
+                <div class="qm-body">
+
+                    <!-- Query Title -->
+                    <label class="form-label">Query Title</label>
+                    <input id="queryTitle" maxlength="100" class="form-control custom-input"
+                        placeholder="Brief title for your query..." />
+
+                    <div class="hint-row">
+                        <div class="hint">Keep it concise and descriptive</div>
+                        <div class="counter"><span id="countText">0</span>/100</div>
+                    </div>
+
+                    <!-- Query Details -->
+                    <div class="mt-3">
+                        <label class="form-label">Query Details</label>
+                        <textarea id="queryDetails" class="form-control custom-input"
+                            placeholder="Describe your question or issue in detail..."></textarea>
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+                <div class="qm-footer">
+                    <button id="submitBtn" class="btn btn-submit" disabled>
+                        <i class="bi bi-send-fill"></i> Submit Query
+                    </button>
+
+                    <button class="btn btn-cancel" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle-fill"></i> Cancel
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- link main js -->
+    <script src="./../assets/js/main.js"></script>
+
+    <script>
+        const titleInput = document.getElementById("queryTitle");
+        const detailsInput = document.getElementById("queryDetails");
+        const counter = document.getElementById("countText");
+        const submitBtn = document.getElementById("submitBtn");
+
+        function updateUI() {
+            // counter
+            counter.innerText = titleInput.value.length;
+
+            // enable submit only if fields filled
+            const ok = titleInput.value.trim().length > 0 && detailsInput.value.trim().length > 0;
+
+            if (ok) {
+                submitBtn.classList.add("active");
+                submitBtn.disabled = false;
+                submitBtn.style.cursor = "pointer";
+            } else {
+                submitBtn.classList.remove("active");
+                submitBtn.disabled = true;
+            }
+        }
+
+        titleInput.addEventListener("input", updateUI);
+        detailsInput.addEventListener("input", updateUI);
+
+        // demo submit
+        submitBtn.addEventListener("click", () => {
+            alert("Query Submitted Successfully ✅");
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batch Schedule - Premium</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- font-awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+
+
+    <!-- link custom css -->
+    <link rel="stylesheet" href="./../assets/css/style.css">
+    <link rel="stylesheet" href="./../assets/css/batches.css">
+
+</head>
+
+<body>
+
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar-btn d-md-none" onclick="closeSidebar()">
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="sidebar-header">
+            <div class="logo-box"><img src="./../assets/img/logo.png" alt="logo" width="60px" height="60px"></div>
+        </div>
+
+        <button class="toggle-btn" onclick="toggleSidebar()">
+            <i class="bi bi-chevron-left" id="toggleIcon"></i>
+        </button>
+
+        <nav class="sidebar-nav">
+            <a href="./../dashboard.html" class="sidebar-link"><i
+                    class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+            <a href="./my-Profile.html" class="sidebar-link "><i class="bi bi-people"></i><span>My
+                    Profile</span></a>
+            <a href="./../pages/courses/allCourses.html" class="sidebar-link"><i
+                    class="fa-regular fa-chart-bar"></i><span>All Courses</span></a>
+            <a href="./../pages/courses/myCourses.html" class="sidebar-link"><i class="bi bi-book"></i><span>
+                    MyCourses</span></a>
+            <a href="./../pages/courses/coursesMaterial.html" class="sidebar-link"><i class="bi bi-book"></i><span>
+                    Course Materials</span></a>
+            <a href="./batches.html" class="sidebar-link active"><i class="bi bi-layers"></i><span>Batches</span></a>
+            <a href="./payment.html" class="sidebar-link"><i
+                    class="bi bi-credit-card"></i><span>Payments</span></a>
+            <a href="./queries.html" class="sidebar-link"><i
+                    class="bi bi-chat-left-dots"></i><span>Enquiries</span></a>
+            <a href="./certificate.html" class="sidebar-link"><i
+                    class="bi bi-patch-check"></i><span>Certificates</span></a>
+            <a href="./settings.html" class="sidebar-link"><i
+                    class="bi bi-gear"></i><span>Settings</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a class="sidebar-link"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <!-- NAVBAR -->
+    <header class="navbar-custom d-flex align-items-center justify-content-between">
+
+        <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-light d-md-none bg-warning text-white fs-6" onclick="toggleSidebar()">
+                <i class="bi bi-list" id="toggleIcon"></i>
+            </button>
+            <h5 class="mb-0 fw-semibold">Dashboard</h5>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+
+            <!--==================== Bell Icon ==================-->
+            <div class="dropdown text-end">
+                <div class="notification-bell" data-bs-toggle="dropdown">
+                    <i class="bi bi-bell fs-4 text-dark"></i>
+                    <span class="notify-dot"></span>
+                </div>
+
+                <!-- Dropdown notification -->
+                <div class="dropdown-menu text-dark dropdown-menu-end dropdown-menu-notify">
+
+                    <div class="notify-header">
+                        Notifications
+                    </div>
+
+                    <div style="max-height: 280px; overflow-y: auto;">
+                        <div class="notify-item">
+                            <div class="notify-avatar">RK</div>
+                            <div>
+                                <div><strong>Rahul Kumar</strong> enrolled in Full Stack</div>
+                                <div class="notify-time">2 min ago</div>
+                            </div>
+                        </div>
+
+                        <div class="notify-item">
+                            <div class="notify-avatar">PS</div>
+                            <div>
+                                <div><strong>Priya Sharma</strong> made a payment</div>
+                                <div class="notify-time">1 hour ago</div>
+                            </div>
+                        </div>
+
+                        <div class="notify-item">
+                            <div class="notify-avatar">AS</div>
+                            <div>
+                                <div><strong>Amit Singh</strong> sent a message</div>
+                                <div class="notify-time">Yesterday</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-light d-flex align-items-center gap-2" data-bs-toggle="dropdown">
+                    <div class="avatar">SM</div>
+                    <span class="d-none d-md-inline">Sumon</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a href="./settings/settings.html" class="dropdown-item">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item text-danger">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+
+
+    <!-- ===================MY-BATCHES======================== -->
+
+    <main class="main-content">
+        <div class="page-wrap">
+             <!-- Header -->
+            <div class="page-title">
+                <h3>My Batches</h3>
+            </div>
+
+            <!-- Premium Tabs -->
+            <div class="tabbar">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <button class="tabbtn active" type="button">
+                            <i class="bi bi-laptop"></i>
+                            IT BATCH
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Batch Card -->
+            <div class="batch-card">
+
+                <!-- head chips -->
+                <div class="batch-head">
+                    <div class="chip-row">
+                        <span class="chip green">
+                            <i class="bi bi-patch-check-fill"></i> COURSE : FULL FULLSTACK COURSE & TRAINING
+                        </span>
+                    </div>
+
+                    <div class="chip-row">
+                        <span class="chip blue">
+                            <i class="bi bi-calendar2-week-fill"></i> Weekly Mode : OFFLINE (12 Jan 2026 to 18 Jan 2026)
+                        </span>
+                        <span class="chip gray">
+                            <i class="bi bi-calendar-event-fill"></i> Batch Start Date : <b>10-12-2024</b>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- table -->
+                <div class="table-wrap">
+                    <div class="scroll-x">
+                        <table class="batch-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 18%;">Day</th>
+                                    <th style="width: 18%;">Time</th>
+                                    <th style="width: 22%;">Batch ID</th>
+                                    <th style="width: 10%;">Today's Class</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Tuesday</td>
+                                    <td>11:00 AM - 1:00 PM</td>
+                                    <td>WA-087-RAKA-IT-FRJCT-JUL-2025-1</td>
+                                    <td>
+                                        <span class="mode-pill offline"><i class="bi bi-wifi-off"></i> OFFLINE</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Thursday</td>
+                                    <td>11:00 AM - 1:00 PM</td>
+                                    <td>WA-087-RAKA-IT-FRJCT-JUL-2025-1</td>
+                                    <td>
+                                        <span class="mode-pill offline"><i class="bi bi-wifi-off"></i> OFFLINE</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Friday</td>
+                                    <td>11:00 AM - 1:00 PM</td>
+                                    <td>WA-087-RAKA-IT-FRJCT-JUL-2025-1</td>
+                                    <td>
+                                        <span class="mode-pill offline"><i class="bi bi-wifi-off"></i> OFFLINE</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+                <!-- footer -->
+                <div class="batch-footer">
+                    <div class="footer-panel">
+                        <div>
+                            <p class="fc-title mb-0">Faculty Contact Details</p>
+                            <div class="fc-email">
+                                <i class="bi bi-envelope-fill"></i>
+                                irsdesign@academy.info
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2 flex-wrap">
+                            <button class="btn btn-soft" data-bs-toggle="modal" data-bs-target="#attendanceModal">
+                                <i class="bi bi-eye-fill"></i> View Attendance
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!--=========Premium Attendance Modal==========-->
+
+        <div class="modal fade premium-modal" id="attendanceModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="att-modal-head">
+                        <div class="d-flex align-items-center gap-10">
+                            <h6 class="att-title mb-0">Attendance Details</h6>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                            <div class="att-chips">
+                                <span class="stat-chip present"><i class="bi bi-check-circle-fill"></i> Present :
+                                    42</span>
+                                <span class="stat-chip absent"><i class="bi bi-x-circle-fill"></i> Absent : 21</span>
+                                <span class="stat-chip postpone"><i class="bi bi-clock-fill"></i> Postpone : 0</span>
+                            </div>
+
+                            <button class="btn-close-premium" type="button" data-bs-dismiss="modal">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Modal Body -->
+                    <div class="att-modal-body">
+
+                        <div class="att-scroll">
+                            <table class="att-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 18%;">Date</th>
+                                        <th style="width: 18%;">Login</th>
+                                        <th style="width: 18%;">Logout</th>
+                                        <th style="width: 18%;">Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>2024-12-20</td>
+                                        <td>—</td>
+                                        <td>—</td>
+                                        <td><span class="status-pill absent">Absent</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2024-12-20</td>
+                                        <td>—</td>
+                                        <td>—</td>
+                                        <td><span class="status-pill absent">Absent</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2024-12-19</td>
+                                        <td>11:02 AM</td>
+                                        <td>12:59 PM</td>
+                                        <td><span class="status-pill present">Present</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2024-12-18</td>
+                                        <td>—</td>
+                                        <td>—</td>
+                                        <td><span class="status-pill absent">Absent</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2024-12-17</td>
+                                        <td>11:04 AM</td>
+                                        <td>01:00 PM</td>
+                                        <td><span class="status-pill present">Present</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2024-12-16</td>
+                                        <td>—</td>
+                                        <td>—</td>
+                                        <td><span class="status-pill postpone">Postpone</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2024-12-15</td>
+                                        <td>11:08 AM</td>
+                                        <td>12:55 PM</td>
+                                        <td><span class="status-pill present">Present</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2024-12-14</td>
+                                        <td>—</td>
+                                        <td>—</td>
+                                        <td><span class="status-pill absent">Absent</span></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- link main js -->
+    <script src="./../assets/js/main.js"></script>
+</body>
+
+</html>

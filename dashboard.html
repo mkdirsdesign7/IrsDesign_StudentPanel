@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+
+    <!-- custom css lihk -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar-btn d-md-none" onclick="closeSidebar()">
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="sidebar-header">
+            <div class="logo-box"><img src="./assets/img/logo.png" alt="logo" width="60px" height="60px"></div>
+            <!-- <div class="logo-text">
+                <p class="text-white ms-3 fs-5">Admin Panel</p>
+            </div> -->
+        </div>
+
+        <button class="toggle-btn" onclick="toggleSidebar()">
+            <i class="bi bi-chevron-left" id="toggleIcon"></i>
+        </button>
+
+        <nav class="sidebar-nav">
+            <a href="./dashboard.html" class="sidebar-link active"><i
+                    class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+            <a href="./pages/my-Profile.html" class="sidebar-link"><i class="bi bi-people"></i><span>My
+                    Profile</span></a>
+            <a href="./pages/courses/allCourses.html" class="sidebar-link"><i class="fa-regular fa-chart-bar"></i><span>
+                    All Courses</span></a>
+            <a href="./pages/courses/myCourses.html" class="sidebar-link"><i class="bi bi-book"></i><span>
+                    MyCourses</span></a>
+            <a href="./pages/courses/coursesMaterial.html" class="sidebar-link"><i class="bi bi-book"></i><span>
+                    Course Materials</span></a>
+            <a href="./pages/batches.html" class="sidebar-link"><i class="bi bi-layers"></i><span>Batches</span></a>
+            <a href="./pages/payment.html" class="sidebar-link"><i
+                    class="bi bi-credit-card"></i><span>Payments</span></a>
+            <a href="./pages/queries.html" class="sidebar-link"><i
+                    class="bi bi-chat-left-dots"></i><span>Enquiries</span></a>
+            <a href="./pages/certificate.html" class="sidebar-link"><i
+                    class="bi bi-patch-check"></i><span>Certificates</span></a>
+            <a href="./pages/settings.html" class="sidebar-link"><i class="bi bi-gear"></i><span>Settings</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a class="sidebar-link"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <!-- NAVBAR -->
+    <header class="navbar-custom d-flex align-items-center justify-content-between">
+
+        <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-light d-md-none bg-warning text-white fs-6" onclick="toggleSidebar()">
+                <i class="bi bi-list" id="toggleIcon"></i>
+            </button>
+            <h5 class="mb-0 fw-semibold">Dashboard</h5>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+
+            <!--==================== Bell Icon ==================-->
+            <div class="dropdown text-end">
+                <div class="notification-bell" data-bs-toggle="dropdown">
+                    <i class="bi bi-bell fs-4 text-dark"></i>
+                    <span class="notify-dot"></span>
+                </div>
+
+                <!-- Dropdown notification -->
+                <div class="dropdown-menu text-dark dropdown-menu-end dropdown-menu-notify">
+
+                    <div class="notify-header">
+                        Notifications
+                    </div>
+
+                    <div style="max-height: 280px; overflow-y: auto;">
+                        <div class="notify-item">
+                            <div class="notify-avatar">RK</div>
+                            <div>
+                                <div><strong>Rahul Kumar</strong> enrolled in Full Stack</div>
+                                <div class="notify-time">2 min ago</div>
+                            </div>
+                        </div>
+
+                        <div class="notify-item">
+                            <div class="notify-avatar">PS</div>
+                            <div>
+                                <div><strong>Priya Sharma</strong> made a payment</div>
+                                <div class="notify-time">1 hour ago</div>
+                            </div>
+                        </div>
+
+                        <div class="notify-item">
+                            <div class="notify-avatar">AS</div>
+                            <div>
+                                <div><strong>Amit Singh</strong> sent a message</div>
+                                <div class="notify-time">Yesterday</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-light d-flex align-items-center gap-2" data-bs-toggle="dropdown">
+                    <div class="avatar">SM</div>
+                    <span class="d-none d-md-inline">Sumon</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a href="./settings/settings.html" class="dropdown-item">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item text-danger">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+
+
+
+    <!--================== MAIN CONTENT ==================-->
+    <!-- ✅ MAIN CONTENT -->
+    <main class="main-content">
+        <div class="dash-wrap">
+
+            <!--  Welcome -->
+            <div class="welcome-card">
+                <div class="welcome-title">Welcome, Sumon Maity</div>
+                <p class="welcome-sub">
+                    Welcome to your dashboard Sumon Maity, here is your final onboarding date and time.
+                </p>
+            </div>
+
+            <!--  Top grid -->
+            <div class="row g-3">
+
+                <!--  Personal Info -->
+                <div class="col-lg-4">
+                    <div class="dash-card">
+                        <div class="card-head">
+                            <h6 class="card-title">Personal Information</h6>
+                        </div>
+
+                        <table class="info-table">
+                            <tr>
+                                <td>Name:</td>
+                                <td>Sumon Maity</td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td>sumon123@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>DOB:</td>
+                                <td>1999-11-09</td>
+                            </tr>
+                            <tr>
+                                <td>Contact:</td>
+                                <td>9932980326</td>
+                            </tr>
+                            <tr>
+                                <td>Gender:</td>
+                                <td>MALE</td>
+                            </tr>
+                            <tr>
+                                <td>Blood:</td>
+                                <td>AB+</td>
+                            </tr>
+                            <tr>
+                                <td>Guardian:</td>
+                                <td>Sudharsan Maity</td>
+                            </tr>
+                            <tr>
+                                <td>Guardian Mobile:</td>
+                                <td>9593039722</td>
+                            </tr>
+                            <tr>
+                                <td>Guardian Email:</td>
+                                <td>sumon123@gmail.com</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ✅ Batch Allotment -->
+                <div class="col-lg-8">
+                    <div class="dash-card">
+
+                        <div class="card-head">
+                            <h6 class="card-title">Batch Allotment</h6>
+                            <div class="top-dd">
+                                FULL STACK COURSE &amp; TRAINING <i class="bi bi-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <!-- ✅ Mobile scroll wrapper -->
+                        <div class="batch-table scroll-x">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width: 16%;">Day</th>
+                                        <th style="width: 22%;">Time</th>
+                                        <th>Batch ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Tuesday</td>
+                                        <td>11:00 AM - 1:00 PM</td>
+                                        <td>WA-087-RAKA-IT-FRJCT-JUL-2025-1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thursday</td>
+                                        <td>11:00 AM - 1:00 PM</td>
+                                        <td>WA-087-RAKA-IT-FRJCT-JUL-2025-1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Friday</td>
+                                        <td>11:00 AM - 1:00 PM</td>
+                                        <td>WA-087-RAKA-IT-FRJCT-JUL-2025-1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <a class="card-link" href="#">View All Batch Allotment</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ✅ Bottom grid -->
+            <div class="row g-3 mt-1">
+
+                <!-- ✅ Payment History -->
+                <div class="col-lg-8">
+                    <div class="dash-card">
+                        <div class="card-head">
+                            <h6 class="card-title">Payment History</h6>
+                            <div class="top-dd">
+                                Attempt No 1 <i class="bi bi-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <div class="payment-wrap">
+                            <!-- ✅ Mobile scroll wrapper -->
+                            <div class="payment-table scroll-x">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%;">Payment Date</th>
+                                            <th style="width: 18%;">Method</th>
+                                            <th style="width: 18%;">Amount</th>
+                                            <th style="width: 24%;">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>19/12/2024</td>
+                                            <td>Cash</td>
+                                            <td>₹ 22500</td>
+                                            <td>
+                                                <span class="status-pill">
+                                                    <i class="bi bi-check-circle-fill"></i> Paid
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>19/12/2024</td>
+                                            <td>Cash</td>
+                                            <td>₹ 22500</td>
+                                            <td>
+                                                <span class="status-pill">
+                                                    <i class="bi bi-check-circle-fill"></i> Paid
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>19/12/2024</td>
+                                            <td>Cash</td>
+                                            <td>₹ 5000</td>
+                                            <td>
+                                                <span class="status-pill">
+                                                    <i class="bi bi-check-circle-fill"></i> Paid
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <a class="card-link" href="#">View All History</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ✅ Documentation Progress -->
+                <div class="col-lg-4">
+                    <div class="dash-card">
+                        <div class="card-head">
+                            <h6 class="card-title">Documentation Progress Status</h6>
+                        </div>
+
+                        <div class="progress-wrap">
+                            <div class="doc-item">
+                                <div class="doc-left">
+                                    <i class="bi bi-geo-alt"></i>
+                                    Address Details
+                                </div>
+                                <span class="done-pill"><i class="bi bi-check-circle-fill"></i> Completed</span>
+                            </div>
+
+                            <div class="doc-item">
+                                <div class="doc-left">
+                                    <i class="bi bi-mortarboard"></i>
+                                    Educational Qualification Details
+                                </div>
+                                <span class="done-pill"><i class="bi bi-check-circle-fill"></i> Completed</span>
+                            </div>
+
+                            <div class="doc-item">
+                                <div class="doc-left">
+                                    <i class="bi bi-upload"></i>
+                                    Upload Documents
+                                </div>
+                                <span class="done-pill"><i class="bi bi-check-circle-fill"></i> Completed</span>
+                            </div>
+
+                            <div class="doc-item">
+                                <div class="doc-left">
+                                    <i class="bi bi-file-earmark-check"></i>
+                                    Declaration
+                                </div>
+                                <span class="done-pill"><i class="bi bi-check-circle-fill"></i> Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- main js link -->
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
