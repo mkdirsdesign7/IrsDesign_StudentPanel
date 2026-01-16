@@ -35,7 +35,7 @@ body {
     margin: 0 auto;
 }
 
-/* ✅ Premium card */
+/*  Premium card */
 .p-card {
     position: relative;
     border-radius: 22px;
@@ -61,7 +61,7 @@ body {
     pointer-events: none;
 }
 
-/* ✅ page header */
+/*  page header */
 .page-head {
     display: flex;
     align-items: center;
@@ -84,7 +84,7 @@ body {
     font-size: 12px;
 }
 
-/* ✅ tabs right */
+/*  tabs right */
 .settings-card {
     padding: 16px;
 }
