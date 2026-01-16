@@ -349,3 +349,158 @@ body {
         align-items: flex-start;
     }
 }
+
+
+/*=========================== Premium Edit Modal ======================*/
+.editModal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    place-items: center;
+    padding: 20px;
+}
+
+.editModal.show {
+    display: grid;
+}
+
+.editOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+.editBox {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 920px;
+    border-radius: 26px;
+    overflow: hidden;
+    background: rgba(10, 16, 34, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 35px 110px rgba(0, 0, 0, 0.65);
+    animation: popEdit 0.25s ease;
+}
+
+@keyframes popEdit {
+    from {
+        transform: translateY(18px) scale(0.98);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.editTop {
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.fw-black {
+    font-weight: 900;
+}
+
+.closeEdit {
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #fff;
+    transition: 0.25s ease;
+}
+
+.closeEdit:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.10);
+}
+
+.editBody {
+    padding: 20px;
+}
+
+/* ✅ inputs premium */
+.premium-input {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #fff !important;
+    border-radius: 16px !important;
+    padding: 12px 14px !important;
+    font-weight: 700 !important;
+}
+
+.premium-input::placeholder {
+    color: rgba(255, 255, 255, 0.40) !important;
+}
+
+.premium-input:focus {
+    box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.16) !important;
+    border-color: rgba(255, 193, 7, 0.35) !important;
+}
+
+/* Buttons */
+.editActions {
+    display: flex;
+    gap: 14px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.btnCancel {
+    border-radius: 18px;
+    padding: 12px 18px;
+    font-weight: 900;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    transition: 0.25s ease;
+}
+
+.btnCancel:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.btnSave {
+    border-radius: 18px;
+    padding: 12px 18px;
+    font-weight: 900;
+    border: none;
+    color: #0b1220;
+    background: linear-gradient(135deg, #ffc107, #ffda70);
+    box-shadow: 0 18px 45px rgba(255, 193, 7, 0.20);
+    transition: 0.25s ease;
+}
+
+.btnSave:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 65px rgba(255, 193, 7, 0.30);
+}
+
+/* Responsive */
+@media(max-width: 500px) {
+    .editBody {
+        padding: 16px;
+    }
+
+    .editActions {
+        justify-content: stretch;
+    }
+
+    .btnCancel,
+    .btnSave {
+        width: 100%;
+    }
+}

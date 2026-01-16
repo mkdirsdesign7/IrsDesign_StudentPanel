@@ -53,16 +53,12 @@
                     MyCourses</span></a>
             <a href="./../pages/courses/coursesMaterial.html" class="sidebar-link"><i class="bi bi-book"></i><span>
                     Course Materials</span></a>
-            <a href="./batches.html" class="sidebar-link"><i
-                    class="bi bi-layers"></i><span>Batches</span></a>
-            <a href="./payment.html" class="sidebar-link"><i
-                    class="bi bi-credit-card"></i><span>Payments</span></a>
-            <a href="./queries.html" class="sidebar-link"><i
-                    class="bi bi-chat-left-dots"></i><span>Enquiries</span></a>
+            <a href="./batches.html" class="sidebar-link"><i class="bi bi-layers"></i><span>Batches</span></a>
+            <a href="./payment.html" class="sidebar-link"><i class="bi bi-credit-card"></i><span>Payments</span></a>
+            <a href="./queries.html" class="sidebar-link"><i class="bi bi-chat-left-dots"></i><span>Enquiries</span></a>
             <a href="./certificate.html" class="sidebar-link"><i
                     class="bi bi-patch-check"></i><span>Certificates</span></a>
-            <a href="./settings.html" class="sidebar-link"><i
-                    class="bi bi-gear"></i><span>Settings</span></a>
+            <a href="./settings.html" class="sidebar-link"><i class="bi bi-gear"></i><span>Settings</span></a>
         </nav>
 
         <div class="sidebar-footer">
@@ -148,7 +144,7 @@
 
         <div class="page-wrap">
 
-             <!-- Header -->
+            <!-- Header -->
             <div class="page-title">
                 <h3>My Profile</h3>
             </div>
@@ -181,7 +177,7 @@
                             </div>
 
                             <div class="action-row">
-                                <button class="btn btn-premium w-100">
+                                <button class="btn btn-premium w-100" id="editBtn">
                                     <i class="bi bi-pencil-square me-2"></i> Edit Profile
                                 </button>
 
@@ -322,6 +318,111 @@
         </div>
 
     </main>
+
+    <!-- PREMIUM EDIT MODAL -->
+    <div class="editModal" id="editModal">
+        <div class="editOverlay" id="editOverlay"></div>
+
+        <div class="editBox">
+            <!-- Header -->
+            <div class="editTop">
+                <h5 class="m-0 fw-black">
+                    <i class="bi bi-person-gear me-2"></i> Edit Profile
+                </h5>
+
+                <button class="closeEdit" id="closeEdit">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <!-- Body -->
+            <div class="editBody">
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control premium-input" id="editName" value="SUMON MAITY" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control premium-input" id="editEmail"
+                            value="sumon123@gmail.com" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Contact Number</label>
+                        <input type="text" class="form-control premium-input" id="editPhone" value="+91 9932980826" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">WhatsApp</label>
+                        <input type="text" class="form-control premium-input" id="editWhatsapp"
+                            value="+91 9932980826" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control premium-input" id="editDob" value="1999-11-09" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Gender</label>
+                        <select class="form-select premium-input" id="editGender">
+                            <option selected>MALE</option>
+                            <option>FEMALE</option>
+                            <option>OTHER</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Blood Group</label>
+                        <select class="form-select premium-input" id="editBlood">
+                            <option selected>AB+</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Guardian Name</label>
+                        <input type="text" class="form-control premium-input" id="editGuardian"
+                            value="Sudharsan Maity" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Guardian Mobile</label>
+                        <input type="text" class="form-control premium-input" id="editGuardianPhone"
+                            value="+91 9593039827" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Address</label>
+                        <input type="text" class="form-control premium-input" id="editAddress"
+                            value="Kolkata, Kolkata, SDF-70..." />
+                    </div>
+
+                </div>
+
+                <!-- Buttons -->
+                <div class="editActions mt-4">
+                    <button class="btnCancel" id="cancelEdit">
+                        <i class="bi bi-x-circle me-1"></i> Cancel
+                    </button>
+
+                    <button class="btnSave" id="saveEdit">
+                        <i class="bi bi-check-circle me-1"></i> Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -340,6 +441,39 @@
             });
         });
     </script>
+
+    <script>
+        const editBtn = document.getElementById("editBtn");
+        const editModal = document.getElementById("editModal");
+        const editOverlay = document.getElementById("editOverlay");
+        const closeEdit = document.getElementById("closeEdit");
+        const cancelEdit = document.getElementById("cancelEdit");
+
+        function openEdit() {
+            editModal.classList.add("show");
+        }
+
+        function closeModal() {
+            editModal.classList.remove("show");
+        }
+
+        editBtn?.addEventListener("click", openEdit);
+        closeEdit?.addEventListener("click", closeModal);
+        cancelEdit?.addEventListener("click", closeModal);
+        editOverlay?.addEventListener("click", closeModal);
+
+        // ESC close
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeModal();
+        });
+
+        //  Save button demo
+        document.getElementById("saveEdit")?.addEventListener("click", () => {
+            alert("Profile Updated Successfully ");
+            closeModal();
+        });
+    </script>
+
 </body>
 
 </html>
