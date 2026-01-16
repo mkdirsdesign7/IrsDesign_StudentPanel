@@ -279,7 +279,7 @@
                                 </div>
 
                                 <div class="purchase-actions">
-                                    <button class="btn-buy">
+                                    <button class="btn-buy" id="purchaseBtn">
                                         <i class="bi bi-bag-fill"></i> Purchase
                                     </button>
                                 </div>
@@ -315,10 +315,121 @@
         </div>
     </main>
 
+    <!-- PAYMENT MODAL -->
+    <div class="payModal" id="payModal">
+        <div class="payOverlay" id="payOverlay"></div>
+
+        <div class="payBox">
+            <div class="payTop">
+                <h5><i class="bi bi-credit-card me-2"></i> Purchase Checkout</h5>
+                <button class="closeBtn" id="closePay">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <div class="payContent">
+                <div class="row g-3">
+
+                    <div class="col-md-7">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Your name">
+
+                        <div class="mt-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                        </div>
+
+                        <div class="mt-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Enter phone">
+                        </div>
+
+                        <div class="mt-3">
+                            <label class="form-label">Payment Method</label>
+                            <select class="form-select" id="paymentMethod">
+                                <option selected>UPI</option>
+                                <option>Debit Card</option>
+                                <option>Credit Card</option>
+                                <option>Net Banking</option>
+                            </select>
+                        </div>
+
+                        <div class="mt-3">
+                            <label class="form-label">Transaction ID (Optional)</label>
+                            <input type="text" class="form-control" placeholder="e.g. UPI-XXXX-XXXX">
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="paySummary">
+                            <div>
+                                <h6>Full React JS Course</h6>
+                                <div style="color:rgba(255,255,255,0.70);font-weight:700;font-size:13px">
+                                    Premium Course • Mentorship
+                                </div>
+                            </div>
+                            <div class="amount">₹45,000</div>
+                        </div>
+
+                        <div class="mt-3" style="color:rgba(255,255,255,0.70);font-size:13px;line-height:1.7">
+                            ✅ Secure checkout<br>
+                            ✅ Lifetime access + Certificate<br>
+                            ✅ Live mentorship support<br>
+                            ✅ Premium dashboard projects
+                        </div>
+
+                        <div class="mt-4">
+                            <button class="payBtn">
+                                <i class="bi bi-shield-check me-1"></i> Confirm Payment
+                            </button>
+                        </div>
+
+                        <div class="mt-2 text-center" style="color:rgba(255,255,255,0.55);font-size:12px">
+                            By continuing, you agree to our Terms & Refund Policy.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- link of main js -->
-   <script src="./../../assets/js/main.js"></script>
+    <script src="./../../assets/js/main.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        //  open modal
+        const purchaseBtn = document.getElementById("purchaseBtn");
+        const payModal = document.getElementById("payModal");
+        const closePay = document.getElementById("closePay");
+        const payOverlay = document.getElementById("payOverlay");
+
+        purchaseBtn.addEventListener("click", () => {
+            payModal.classList.add("show");
+
+            //  Auto fill from Register localStorage
+            const user = JSON.parse(localStorage.getItem("student_register") || "{}");
+
+            document.getElementById("fullName").value = user.name || "";
+            document.getElementById("email").value = user.email || "";
+            document.getElementById("phone").value = user.phone || "";
+        });
+
+        //  close modal
+        function closeModal() {
+            payModal.classList.remove("show");
+        }
+
+        closePay.addEventListener("click", closeModal);
+        payOverlay.addEventListener("click", closeModal);
+
+        // ESC close
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeModal();
+        });
+    </script>
 </body>
 
 </html>
