@@ -441,7 +441,7 @@ body {
     font-weight: 700 !important;
 }
 
-.premium-input option{
+.premium-input option {
     background-color: #0b1220 !important;
     color: var(--text) !important;
 }
@@ -453,6 +453,11 @@ body {
 .premium-input:focus {
     box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.16) !important;
     border-color: rgba(255, 193, 7, 0.35) !important;
+}
+
+input[type="date"] {
+    background-color: #0b1220 !important;
+    color: var(--text) !important;
 }
 
 /* Buttons */
