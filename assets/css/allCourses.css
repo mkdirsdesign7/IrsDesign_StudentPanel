@@ -377,8 +377,8 @@ body {
 .payBtn {
     width: 100%;
     border: none;
-    background: linear-gradient(135deg, var(--yellow), var(--yellow2));
-    color: #0b1220;
+    background: linear-gradient(135deg, var(--brand), var(--brand2)) !important;
+    color: #0b1220 !important;
     font-weight: 900;
     border-radius: 18px;
     padding: 14px 16px;
